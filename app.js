@@ -18,12 +18,23 @@ console.log(parseInt(number.innerHTML));
 
 const sumHandler = (val) => {
   showNumber += val;
-  console.log(showNumber);
   number.innerHTML = showNumber;
+
+console.log(showNumber);
+
+  if(showNumber > 0) {
+    number.style.color = "#e84135"
+  } else if (showNumber < 0) {
+    number.style.color = "#3583e8"
+  } else {
+    number.style.color = "black";
+  }
 };
 
 const rHandler = () => {
   number.innerHTML = 0;
+  showNumber = 0
+  number.style.color = "black";
 };
 
 dBtn.addEventListener("click", () => sumHandler(-1));
